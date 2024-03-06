@@ -1,0 +1,17 @@
+doctype html 
+html (lang='en') 
+   head 
+      title = title 
+      link(rel='stylesheet' href='/stylesheets/style.css')
+
+    body 
+      header 
+        h1 Everything Shop 
+      nav 
+        a(href='/categories') All Categories 
+        a(href='/parts') All Parts 
+        a(href='/reset') Reset Inventory 
+      main 
+        h2 = title 
+        block = content 
+    

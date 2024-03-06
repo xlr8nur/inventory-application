@@ -1,0 +1,17 @@
+extends ../layout 
+
+block content 
+  p 
+    a(href=`/category/${category._id}/update`) Update Category
+  p 
+    a(href=`${category.url}/delete`) Delete Category
+  p= category.description 
+  if parts.length > 0
+    ul 
+      each part in parts 
+        li 
+          a(href=part.url) #{part.name}
+  else 
+    p 
+      i There are not any parts for this category.
+    

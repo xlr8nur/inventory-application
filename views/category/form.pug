@@ -1,0 +1,32 @@
+extends ../layout 
+
+block content 
+  form(method='POST' action='') 
+    div 
+      label(
+        for='category-name'
+        ) Category Name:  
+      input#category-name(
+        required=true 
+        maxLength=32
+        type='text'
+        name='category_name'
+        value=(category===undefined ? '' : category.name)
+        )
+    div 
+      label(
+        for='category-description' 
+        ) Category Description:  
+      textarea#category-description(
+        required=true 
+        maxLength=512
+        name='category_description'
+      ) #{category===undefined ? '' : category.description}
+    button(type='submit') Submit
+
+  if errors > 0
+    div 
+      p Errors with your submission:
+      ul 
+        each error in errors 
+          li= error.msg

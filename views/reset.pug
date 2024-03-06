@@ -1,0 +1,19 @@
+extends layout 
+
+block content 
+  p This will erase the Inventory database and replace it with default data!
+  p Please enter the admin passcode to continue with the reset!
+  form(method='POST' action='') 
+    label(
+      for='passcode'
+    ) Passcode:  
+    input#passcode(
+      type='text'
+      required='true'
+      name='passcode'
+    )
+    button(
+      type='submit'
+    ) Reset
+  if wrongCode 
+    p Invalid passcode provided! Please try again.

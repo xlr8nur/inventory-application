@@ -1,0 +1,14 @@
+extends ../layout 
+
+block content 
+  if parts && parts.length > 0
+    ul 
+      each part in parts
+        li
+          a(href=part.url) #{part.name}
+  else 
+    p 
+      i There are not any parts.
+
+  p 
+    a(href='/part/new') Add New Part
